@@ -1,0 +1,37 @@
+.loginMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--bg-color);
+}
+.loginMain h1 {
+  font-size: 6.4vw;
+  text-align: center;
+  color: var(--text-color);
+}
+.buttonWrap {
+  margin-top: 8vw;
+}
+.buttonWrap button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 96vw;
+  height: 17.33vw;
+  background-color: #FEE500;
+  border: 0;
+  border-radius: 8vw;
+  position: relative;
+  font-family: yg-jalnan, serif;
+}
+.buttonWrap button img {
+  width: 6.4vw;
+  height: 6.4vw;
+  position: absolute;
+  left: 8vw;
+}
+.buttonWrap button p {
+  font-size: 4.8vw;
+}
