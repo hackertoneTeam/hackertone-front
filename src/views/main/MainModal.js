@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import style from './MainModal.module.css'
 const MainModal = (props) => {
   const year = `${new Date(props.date).getFullYear()}`;
@@ -20,7 +21,7 @@ const MainModal = (props) => {
         <img src={process.env.PUBLIC_URL + "/images/modal_image_1.png"} className={style.modalImage1} alt="image1"/>
         <img src={process.env.PUBLIC_URL + "/images/modal_image_2.png"} className={style.modalImage2} alt="image2"/>
         <img src={process.env.PUBLIC_URL + "/images/modal_image_3.png"} className={style.modalImage3} alt="image3"/>
-        <button className={style.modalButton}>열기</button>
+        <Link to="/timeline" className={style.modalButton}>열기</Link>
       </div>
       <div className={`${props.show ? style.show : style.noShow} ${style.blur}`} onClick={changeShowFunc}></div>
     </>
