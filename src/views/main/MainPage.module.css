@@ -25,6 +25,7 @@
   font-size: 6.4vw;
   color: #503613;
   text-align: center;
+  word-break: keep-all;
 }
 .mainContainer .mainHeader p:nth-child(2) {
   margin-top: 1.33vw;
