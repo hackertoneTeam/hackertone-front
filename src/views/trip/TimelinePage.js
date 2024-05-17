@@ -177,7 +177,7 @@ const TimelinePage = () => {
       <div className={style.header}>
         <div className={style.backContainer}>
           <img src={process.env.PUBLIC_URL + "/images/icon_back.svg"} alt="<" className={style.backIcon} />
-          <Link to="/" className={`${style.pretendard} ${style.back}`}>여권</Link>
+          <Link to="/main" className={`${style.pretendard} ${style.back}`}>여권</Link>
         </div>
         <h1>{data.name}</h1>
         <div>
