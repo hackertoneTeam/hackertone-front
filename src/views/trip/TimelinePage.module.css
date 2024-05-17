@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  background-color: antiquewhite;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 8vh;
+  width: 100vw;
+  background-color: #5DB4B1;
+  color: #ffffff;
+  padding: 0 1em;
+}
+
+.header span {
+  font-size: 2.2vh;
+}
+
+.header img {
+  height: 3vh;
+}
+
+.wave {
+  background-repeat: repeat-x;
+  width: 6000px;
+  height: 20px;
+  position: absolute;
+  top: 8vh;
+  left: 0;
+  animation-name: wave;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.mapContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100%;
+}
+
+@keyframes wave {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -1200px;
+  }
+}
+
+.correction {
+  margin-top: -1vh;
+}
