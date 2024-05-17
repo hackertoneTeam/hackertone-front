@@ -30,7 +30,6 @@ let data = {}
 const getData = () => {
   getTripData(1).then(r => {
     data = r.data;
-    console.log(r.data);
   }).catch(r => {
     console.error(r);
   })
@@ -69,9 +68,10 @@ const Images = (photos) => {
   photos = photos.photos;
   let result = [];
   const classes = [['image1'], ['image2_1', 'image2_2'], ['image3_1', 'image3_2', 'image3_3'], ['image4_1', 'image4_2', 'image4_3', 'image4_4']];
-  for (let i = 0; i < photos.length; i++) {
+  let length = photos.length < 4 ? photos.length : 4;
+  for (let i = 0; i < length; i++) {
     result.push((
-      <div style={{backgroundImage: `url(${photos[i]})`}} className={`${style.image} ${style[classes[photos.length - 1][i]]}`} key={i}></div>
+      <div style={{backgroundImage: `url(${photos[i]})`}} className={`${style.image} ${style[classes[length - 1][i]]}`} key={i}></div>
     ));
   }
   return result;
