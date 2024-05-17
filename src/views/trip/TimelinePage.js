@@ -52,8 +52,6 @@ let data = {
       "user_id": 4,
       "photos": [
         "https://cdn.hankyung.com/photo/202310/AA.34726185.1.jpg",
-        "https://pds.joongang.co.kr/news/component/joongang_sunday/202205/26/23ef9619-fab9-429e-bc19-0422b4e0ad2a.jpg",
-        "https://m.segye.com/content/image/2021/01/07/20210107516500.jpg"
       ],
       "coordis": [
         [
@@ -92,6 +90,18 @@ const Markers = () => {
   return result;
 };
 
+const Images = (photos) => {
+  photos = photos.photos;
+  let result = [];
+  const classes = [['image1'], ['image2_1', 'image2_2'], ['image3_1', 'image3_2', 'image3_3'], ['image4_1', 'image4_2', 'image4_3', 'image4_4']];
+  for (let i = 0; i < photos.length; i++) {
+    result.push((
+      <div style={{backgroundImage: `url(${photos[i]})`}} className={`${style.image} ${style[classes[photos.length - 1][i]]}`} key={i}></div>
+    ));
+  }
+  return result;
+};
+
 let isDragging = false;
 
 const DraggableMenu = () => {
@@ -123,6 +133,24 @@ const DraggableMenu = () => {
     }
   };
 
+  let result = [];
+  for (let e in data.list) {
+    result.push((
+      <div className={style.row} key={e}>
+        <div className={style.dots}></div>
+        <div className={style.contents}>
+          <div className={`${style.row} ${style.flexStart}`}>
+            <h1>{data.list[e].coordis[0][0].toFixed(5)}, {data.list[e].coordis[0][1].toFixed(5)}</h1>
+          </div>
+          <Images photos={data.list[e].photos} />
+          <div className={`${style.diary} ${style.pretendard}`}>
+            <p>{data.list[e].diary}</p>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+
   return (<>
             <div className={style.timelineContainer} style={{top: `${location}px`}}>
               <div onTouchStart={drag} onTouchMove={dragging} onTouchCancel={dragEnd} onTouchEnd={dragEnd} className={style.draggable}>
@@ -132,7 +160,11 @@ const DraggableMenu = () => {
                 </div>
               </div>
               <div className={style.timeline} ref={div}>
-                #855C26<br />#855C26<br />#855C26<br />#855C26<br />#855C26<br />#855C26<br />#855C26<br />#855C26<br />#855C26<br />
+                <div className={`${style.row} ${style.flexStart}`}>
+                  <h1>타임라인</h1>
+                  <h3>{data.list.length}</h3>
+                </div>
+                {result}
               </div>
             </div>
           </>);
