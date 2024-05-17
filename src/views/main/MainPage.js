@@ -2,7 +2,7 @@ import HeaderLayout from "../../commons/layouts/HeaderLayout";
 import FooterLayout from "../../commons/layouts/FooterLayout";
 import style from './MainPage.module.css'
 import {test} from "../../apis/test";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -19,13 +19,13 @@ const MainPage = () => {
     });
   }
 
-
   return (
     <>
       <HeaderLayout />
       <main>
         <h1 className={style.title}>하이</h1>
         <button onClick={apiTest}></button>
+        <Link to="/dd">Links</Link>
       </main>
       <FooterLayout />
     </>
