@@ -91,3 +91,9 @@
   backdrop-filter: blur(4vw);
   z-index: 50;
 }
+.blur.show {
+  display: block;
+}
+.blur.noShow {
+  display: none;
+}

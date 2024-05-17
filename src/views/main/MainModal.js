@@ -4,6 +4,10 @@ const MainModal = (props) => {
   const month = `${new Date(props.date).getDate() + 1}`;
   const day = `${new Date(props.date).getDay()}`;
 
+  const changeShowFunc = () => {
+    props.changeShowFunc(false);
+  }
+
   return (
     <>
       <div className={`${props.show ? style.show : style.noShow} ${style.mainModal}`}>
@@ -18,7 +22,7 @@ const MainModal = (props) => {
         <img src={process.env.PUBLIC_URL + "/images/modal_image_3.png"} className={style.modalImage3} alt="image3"/>
         <button className={style.modalButton}>열기</button>
       </div>
-      <div className={style.blur}></div>
+      <div className={`${props.show ? style.show : style.noShow} ${style.blur}`} onClick={changeShowFunc}></div>
     </>
   )
 }

@@ -19,6 +19,9 @@ const MainPage = () => {
       console.error(r);
     })
   }
+    const changeShow = (value) => {
+      setModalShow(value);
+    }
   return (
     <>
       <main className={style.mainContainer}>
@@ -33,24 +36,22 @@ const MainPage = () => {
         <div className={style.visaList}>
           <ul>
             {visaList.map((item,idx) => { return(
-              <>
-                <li onClick={() => {
-                  setClickIndex(idx)
-                  setModalShow(true)
-                }}>
-                  <div className={style.imgWrap}>
-                    <img src={process.env.PUBLIC_URL + "/images/icon_visa.svg"} alt="여행증"/>
-                  </div>
-                  <div className={style.textWrap}>
-                    <p>{item.trip_name}</p>
-                    <p>여행</p>
-                  </div>
-                </li>
-              </>
+              <li onClick={() => {
+                setClickIndex(idx)
+                setModalShow(true)
+              }} key={idx}>
+                <div className={style.imgWrap}>
+                  <img src={process.env.PUBLIC_URL + "/images/icon_visa.svg"} alt="여행증"/>
+                </div>
+                <div className={style.textWrap}>
+                  <p>{item.trip_name}</p>
+                  <p>여행</p>
+                </div>
+              </li>
             )})}
           </ul>
         </div>
-        <MainModal show={modalShow} date={visaList[clickIndex]?.trip_to} name={visaList[clickIndex]?.trip_name}/>
+        <MainModal show={modalShow} changeShowFunc={changeShow} date={visaList[clickIndex]?.trip_to} name={visaList[clickIndex]?.trip_name}/>
       </main>
       <FooterLayout/>
     </>
