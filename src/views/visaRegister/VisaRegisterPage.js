@@ -27,7 +27,7 @@ const VisaRegisterPage = () => {
   }
   return (
     <>
-      <main>
+      <main className={style.visaRegister}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <input type="text" {...register("name", { required: true })} />
           {errors.name && <span>This field is required</span>}

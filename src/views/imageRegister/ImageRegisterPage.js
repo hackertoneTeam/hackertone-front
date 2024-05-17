@@ -1,12 +1,11 @@
 import style from './ImageRegisterPage.module.css'
 import {getImageUriApi, uploadImage} from "../../apis/trip";
 import {useForm} from "react-hook-form";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
 import exifr from 'exifr';
 import {useLocation, useParams} from "react-router-dom";
 import FooterLayout from "../../commons/layouts/FooterLayout";
-
 
 const ImageRegisterPage = () => {
   const { register, handleSubmit } = useForm();
@@ -43,7 +42,7 @@ const ImageRegisterPage = () => {
     const uploadFile = e.target.files[0]
     formData.append('file', uploadFile)// key, value
     console.log(uploadUrl)
-    axios.post(uploadUrl ,
+    axios.put(uploadUrl ,
       formData,
       {
         headers: {
@@ -104,6 +103,9 @@ const ImageRegisterPage = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
             <h1>추억 올리기</h1>
           <div className={style.fileContainer}>
+            {uploadPhotoList.map(item => {
+              return (<img src={item.download_url} alt=""/>)
+            })}
             <label htmlFor="file1">+</label>
             <label htmlFor="file2">+</label>
             <label htmlFor="file3">+</label>
