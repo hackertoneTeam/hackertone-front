@@ -10,12 +10,57 @@ const MainPage = () => {
   console.log(isDark);
   return (
     <>
-      <HeaderLayout />
-      <main>
-        <h1 className={style.title}>하이</h1>
-        <Link to="/dd">Links</Link>
+      <main className={style.mainContainer}>
+        <div className={style.mainHeader}>
+          <span className={style.line}></span>
+          <div>
+            <p>사증</p>
+            <p>VISAS</p>
+          </div>
+          <span className={style.line}></span>
+        </div>
+        <div className={style.visaList}>
+          <ul>
+            <li>
+              <div className={style.imgWrap}>
+                <img src={process.env.PUBLIC_URL + "/images/icon_visa.svg"} alt="여행증"/>
+              </div>
+              <div className={style.textWrap}>
+                <p>스리자야야야와</p>
+                <p>여행</p>
+              </div>
+            </li>
+            <li>
+              <div className={style.imgWrap}>
+                <img src={process.env.PUBLIC_URL + "/images/icon_visa.svg"} alt="여행증"/>
+              </div>
+              <div className={style.textWrap}>
+                <p>훗카이도</p>
+                <p>여행</p>
+              </div>
+            </li>
+            <li>
+              <div className={style.imgWrap}>
+                <img src={process.env.PUBLIC_URL + "/images/icon_visa.svg"} alt="여행증"/>
+              </div>
+              <div className={style.textWrap}>
+                <p>후쿠오카</p>
+                <p>여행</p>
+              </div>
+            </li>
+            <li>
+              <div className={style.imgWrap}>
+                <img src={process.env.PUBLIC_URL + "/images/icon_visa.svg"} alt="여행증"/>
+              </div>
+              <div className={style.textWrap}>
+                <p>세부</p>
+                <p>여행</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </main>
-      <FooterLayout />
+      <FooterLayout/>
     </>
   )
 }

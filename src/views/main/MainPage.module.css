@@ -1,3 +1,77 @@
 .title {
-  font-size: 30px;
+  font-size: 8vw;
+}
+.mainContainer {
+  width: 100%;
+  min-height: calc(100vh - 23.47vw);
+  background-color: var(--bg-color);
+  padding-bottom: 23.47vw;
+}
+.mainContainer .mainHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8vw 13.33vw 5.33vw 13.33vw;
+  box-sizing: border-box;
+}
+.mainContainer .mainHeader .line {
+  display: block;
+  width: 26.67vw;
+  height: 0.53vw;
+  background-color: #503613;
+}
+.mainContainer .mainHeader p {
+  margin: 0 5.33vw;
+  font-size: 6.4vw;
+  color: #503613;
+  text-align: center;
+}
+.mainContainer .mainHeader p:nth-child(2) {
+  margin-top: 1.33vw;
+  font-size: 4.27vw;
+}
+.mainContainer .visaList ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.mainContainer .visaList li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 50.67vw;
+  position: relative;
+}
+.mainContainer .visaList li:not(:first-child, :nth-child(2)) {
+  margin-top: 30px;
+}
+.mainContainer .visaList .imgWrap {
+  padding: 4.53vw;
+  background-color: #E6DFC2;
+  border-radius: 50%;
+}
+.mainContainer .visaList .textWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.13vw 4.8vw;
+  background-color: #E6DFC2;
+  border-radius: 4vw;
+  position: absolute;
+  bottom: -17px;
+}
+.mainContainer .visaList p {
+  font-size: 5.33vw;
+  color: var(--text-color);
+}
+.mainContainer .visaList p:nth-child(1) {
+  display: block;
+  max-width: 24vw;
+  padding:0 1.33vw;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.mainContainer .visaList p:nth-child(2) {
+  margin-left: 1.33vw;
 }

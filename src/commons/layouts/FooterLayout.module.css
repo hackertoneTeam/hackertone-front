@@ -1,6 +1,6 @@
 .footer {
   width: 100%;
-  min-height: 88px;
+  min-height: 23.47vw;
   background-color: var(--main-color);
   position: fixed;
   bottom: 0;
@@ -9,27 +9,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 5px 21px 5px;
+  padding: 2.13vw 1.33vw 5.6vw 1.33vw;
 }
 .footer li a{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 6px 26px;
-  border-radius: 16px;
+  padding: 1.6vw 6.93vw;
+  border-radius: 4.27vw;
 }
 .footer li.active a {
   background-color: var(--sub-color);
 }
 .footer img {
-  width: 31px;
-  height: 29px;
+  width: 8.27vw;
+  height: 7.73vw;
 }
 .footer p {
   display: block;
-  margin-top: 6px;
-  font-size: 12px;
+  margin-top: 1.6vw;
+  font-size: 3.2vw;
   font-weight: bold;
   color: white;
   text-align: center;
