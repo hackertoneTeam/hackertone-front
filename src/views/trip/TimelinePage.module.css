@@ -48,6 +48,21 @@
   z-index: 1;
 }
 
+.waveBottom {
+  background-repeat: repeat-x;
+  width: 6000px;
+  height: 20px;
+  position: absolute;
+  bottom: 8vh;
+  left: 0;
+  animation-name: wave;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: reverse;
+  z-index: 1;
+}
+
 .mapContainer {
   display: flex;
   align-items: center;
