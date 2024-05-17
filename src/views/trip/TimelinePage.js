@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, Marker, useMap, Polyline } from 'react-leaflet
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 let ping = L.icon({
   iconUrl: process.env.PUBLIC_URL + "/images/pin_icon.png",
@@ -78,7 +78,6 @@ const Markers = () => {
   const map = useMap();
   map.setView(data.list[0].coordis[0], 13);
   let result = [];
-  let prev = [];
   for (let e in data.list) {
     result.push((
       <Marker position={data.list[e].coordis[0]} icon={e > 0 ? smol : ping} key={e} />
@@ -96,7 +95,8 @@ const Markers = () => {
 let isDragging = false;
 
 const DraggableMenu = () => {
-  let [location, setLocation] = useState(window.innerHeight / 100 * 8);
+  let div = useRef(null);
+  let [location, setLocation] = useState(window.innerHeight / 100 * 88 - 20);
 
   const drag = (e) => {
     isDragging = true;
@@ -104,32 +104,35 @@ const DraggableMenu = () => {
 
   const dragging = (e) => {
     if (!isDragging) return;
-    let loc = window.innerHeight - e.touches[0].pageY;
-    if (loc < window.innerHeight / 100 * 8 || loc > window.innerHeight / 100 * 82 - 20 - e.target.offsetHeight) return;
-    setLocation(window.innerHeight - e.touches[0].pageY);
+    let loc = e.touches[0].clientY;
+    setLocation(loc);
   };
 
   const dragEnd = (e) => {
-    console.log(e);
     if (!isDragging) return;
     isDragging = false;
-    let loc = window.innerHeight - e.changedTouches[0].clientY;
-    if(loc < window.innerHeight / 5) {
-      setLocation(window.innerHeight / 100 * 8);
-    } else if (loc > window.innerHeight / 5 * 3) {
-      setLocation(window.innerHeight / 100 * 82 - 20 - e.target.offsetHeight);
+    let loc = e.changedTouches[0].clientY;
+    if (loc > window.innerHeight / 4 * 3) {
+      setLocation(window.innerHeight / 100 * 88 - 20);
+      div.current.style.paddingBottom = '10vh';
+    } else if (loc < window.innerHeight / 5 * 2) {
+      setLocation(window.innerHeight / 100 * 18);
     } else {
-      setLocation(window.innerHeight / 5 * 2);
+      setLocation(window.innerHeight / 2);
+      div.current.style.paddingBottom = `calc(10vh + ${window.innerHeight / 2 - window.innerHeight / 100 * 18}px)`;
     }
   };
 
   return (<>
-            <div className={style.timelineContainer} style={{bottom: `${location}px`}}>
+            <div className={style.timelineContainer} style={{top: `${location}px`}}>
               <div onTouchStart={drag} onTouchMove={dragging} onTouchCancel={dragEnd} onTouchEnd={dragEnd} className={style.draggable}>
                 <div className={style.waveBottom} style={{backgroundImage: `url(${process.env.PUBLIC_URL + "/images/wave_bottom.svg"})`}} />
                 <div className={style.upContainer}>
                   <img className={style.up} src={process.env.PUBLIC_URL + "/images/icon_line.svg"} alt="Up" />
                 </div>
+              </div>
+              <div className={style.timeline} ref={div}>
+                #855C26<br />#855C26<br />#855C26<br />#855C26<br />#855C26<br />#855C26<br />#855C26<br />#855C26<br />#855C26<br />
               </div>
             </div>
           </>);

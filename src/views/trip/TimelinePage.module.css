@@ -110,8 +110,8 @@
   position: fixed;
   bottom: 8vh;
   min-height: 4vh;
-  padding-top: 1vh;
   box-sizing: border-box;
+  transition-duration: .1s;
 }
 
 .up {
@@ -129,4 +129,15 @@
 
 .draggable {
   cursor: grab;
+}
+
+.timeline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100vw;
+  padding: 2vh 0 10vh 0;
+  background-color: #F6F4EF;
+  box-sizing: border-box;
+  min-height: 76vh;
 }
