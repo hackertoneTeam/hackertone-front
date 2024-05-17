@@ -1,9 +1,9 @@
 import Send from './Send.js'
 
-export const test = (data) => {
+export const kakaoLoginApi = (data) => {
   return Send({
     method: 'post',
-    url: `/api/auth/signup`,
+    url: `/kakao/login`,
     data: data,
   })
 }
