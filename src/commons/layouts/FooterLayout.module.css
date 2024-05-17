@@ -18,14 +18,14 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 1vw 6vw;
+  padding: 1vh 6vw;
   border-radius: 4vw;
 }
 .footer li.active a {
   background-color: var(--sub-color);
 }
 .footer img {
-  height: 3vh;
+  height: 2.5vh;
 }
 .footer p {
   display: block;
