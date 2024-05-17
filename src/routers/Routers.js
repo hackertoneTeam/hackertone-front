@@ -10,7 +10,7 @@ const Routers = () => (
       <Route path="/" element={<MainPage />}></Route>
       <Route path="/login" element={<LoginPage/>}></Route>
       <Route path="/auth/kakao/callback" element={<RedirectPage/>}></Route>
-      <Route path="/trip/timeline" element={<TimelinePage/>}></Route>
+      <Route path="/timeline" element={<TimelinePage/>}></Route>
     </Routes>
   </BrowserRouter>
 );
