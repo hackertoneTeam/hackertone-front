@@ -134,10 +134,112 @@
 .timeline {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
   width: 100vw;
-  padding: 2vh 0 10vh 0;
+  padding: 2vh 5vw 10vh 5vw;
   background-color: #F6F4EF;
   box-sizing: border-box;
   min-height: 76vh;
+  overflow-y: scroll;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+.flexStart {
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-bottom: 3vh;
+}
+
+.timeline h1 {
+  color: #855C26;
+  font-size: 2.4vh;
+}
+
+.timeline h3 {
+  color: #BDB092;
+  font-size: 2vh;
+  margin-left: 0.2em;
+}
+
+.dots {
+  width: 3px;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='25' stroke-linecap='square'/%3e%3c/svg%3e");
+  filter: invert(68%) sepia(40%) saturate(180%) hue-rotate(4deg) brightness(97%) contrast(89%);
+  margin: 0 4vw 0 2vw;
+}
+
+.contents {
+  width: 100%;
+  box-sizing: border-box;
+  padding-right: 6vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image {
+  background-size: cover;
+  width: 40vw;
+  height: 25vh;
+  border-radius: 1em;
+  box-shadow: 0 4px 12px 0 rgba(0,0,0,0.3);
+}
+
+.image1 {
+  margin-bottom: 20vh;
+}
+
+.image2_1 {
+  transform: rotate(-5deg) translateX(-5vw);
+}
+
+.image2_2 {
+  transform: rotate(10deg) translateY(-10vh) translateX(5vw);
+}
+
+.image3_1 {
+  transform: rotate(10deg) translateX(5vw);
+}
+
+.image3_2 {
+  transform: rotate(-5deg) translateY(-10vh) translateX(-5vw);
+}
+
+.image3_3 {
+  transform: rotate(3deg) translateY(-20vh) translateX(3vw);
+}
+
+.image4_1 {
+  transform: rotate(-5deg) translateX(-3vw);
+}
+
+.image4_2 {
+  transform: rotate(10deg) translateY(-10vh) translateX(7vw);
+}
+
+.image4_3 {
+  transform: rotate(-8deg) translateY(-20vh) translateX(-5vw);
+}
+
+.image4_4 {
+  transform: rotate(3deg) translateY(-30vh) translateX(2vw);
+}
+
+.diary {
+  width: 100%;
+  background-color: #E6DFC2;
+  color: #503613;
+  font-size: 2vh;
+  line-height: 110%;
+  box-sizing: border-box;
+  padding: 2vh 4vw;
+  border-radius: 1em;
+  transform: translateY(-10vh);
 }
