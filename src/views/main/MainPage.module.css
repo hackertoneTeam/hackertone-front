@@ -43,12 +43,16 @@
   position: relative;
 }
 .mainContainer .visaList li:not(:first-child, :nth-child(2)) {
-  margin-top: 30px;
+  margin-top: 8vw;
 }
 .mainContainer .visaList .imgWrap {
   padding: 4.53vw;
   background-color: #E6DFC2;
   border-radius: 50%;
+}
+.mainContainer .visaList .imgWrap img {
+  width: 36vw;
+  height: 36vw;
 }
 .mainContainer .visaList .textWrap {
   display: flex;
@@ -58,7 +62,7 @@
   background-color: #E6DFC2;
   border-radius: 4vw;
   position: absolute;
-  bottom: -17px;
+  bottom: -4.53vw;
 }
 .mainContainer .visaList p {
   font-size: 5.33vw;
