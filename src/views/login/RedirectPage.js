@@ -25,7 +25,7 @@ const RedirectPage = () => {
       console.log(r);
       localStorage.setItem("token", r.data.access_token);
       setIsLoggedIn(true);
-      navigate('/');
+      navigate('/main');
     }).catch((r) => {
       console.error(r);
     })

@@ -8,9 +8,9 @@ const FooterLayout = () => {
     <>
       <footer className={style.footer}>
         <ul>
-          <li className={location.pathname === '/' ? style.active : ""}>
-            <Link to="/">
-              {location.pathname === '/' ?
+          <li className={location.pathname === '/main' ? style.active : ""}>
+            <Link to="/main">
+              {location.pathname === '/main' ?
                   <img src={process.env.PUBLIC_URL + "/images/icon_passport_active.svg"} alt="여권"/>:
                   <img src={process.env.PUBLIC_URL + "/images/icon_passport.svg"} alt="여권"/>
               }
@@ -26,9 +26,9 @@ const FooterLayout = () => {
               <p>일기</p>
             </Link>
           </li>
-          <li className={location.pathname === '/login' ? style.active : ""}>
-            <Link to="/login">
-              {location.pathname === '/login' ?
+          <li className={location.pathname === '/' ? style.active : ""}>
+            <Link to="/">
+              {location.pathname === '/' ?
                 <img src={process.env.PUBLIC_URL + "/images/icon_menu_active.svg"} alt="메뉴"/>:
                 <img src={process.env.PUBLIC_URL + "/images/icon_menu.svg"} alt="메뉴"/>
               }

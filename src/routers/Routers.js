@@ -8,9 +8,9 @@ const Routers = () => (
   <BrowserRouter>
     <Routes>
       {/* 메인 (visa page) */}
-      <Route path="/" element={<MainPage />}></Route>
+      <Route path="/main" element={<MainPage />}></Route>
       {/* 로그인 */}
-      <Route path="/login" element={<LoginPage/>}></Route>
+      <Route path="/" element={<LoginPage/>}></Route>
       <Route path="/auth/kakao/callback" element={<RedirectPage/>}></Route>
       {/* 비자 등록 페이지 */}
       <Route path="/visa/register" element={<VisaRegisterPage/>}></Route>
