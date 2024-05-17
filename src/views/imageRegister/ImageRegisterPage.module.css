@@ -1,0 +1,56 @@
+.imageRegisterMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 16.41vw);
+  padding: 0 4.27vw 5.33vw 4.27vw;
+}
+.imageRegisterMain input[type=file] {
+  display: none;
+}
+.imageRegisterMain h1 {
+  font-size: 8vw;
+  color: var(--text-color);
+}
+.imageRegisterMain form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.imageRegisterMain .fileContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 5.33vw;
+}
+.imageRegisterMain img {
+  width: 38.93vw;
+  height: 46.4vw;
+}
+.imageRegisterMain label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8vw;
+  color: white;
+  width: 38.93vw;
+  height: 46.4vw;
+  background-color: #999;
+}
+.imageRegisterMain label:not(:nth-child(1), :nth-child(2)) {
+  margin-top: 2.67vw;
+}
+.imageRegisterMain label:nth-child(2n) {
+  margin-left: 2.67vw;
+}
+.button {
+  margin-top: 5.33vw;
+  width: 96vw;
+  height: 16vw;
+  color: white;
+  font-family: yg-jalnan, Serif;
+  background-color: var(--main-color);
+  border: 0;
+  border-radius: 8vw;
+  font-size: 4.8vw;
+}

@@ -3,7 +3,6 @@ import {Link, useLocation} from "react-router-dom";
 
 const FooterLayout = () => {
   const location = useLocation();
-  console.log(location.pathname);
   return (
     <>
       <footer className={style.footer}>
@@ -17,13 +16,9 @@ const FooterLayout = () => {
               <p>여권</p>
             </Link>
           </li>
-          <li className={location.pathname === '/timeline' ? style.active : ""}>
-            <Link to="/timeline">
-              {location.pathname === '/timeline' ?
-                <img src={process.env.PUBLIC_URL + "/images/icon_diary_active.svg"} alt="일기"/>:
-                <img src={process.env.PUBLIC_URL + "/images/icon_diary.svg"} alt="일기"/>
-              }
-              <p>일기</p>
+          <li className={location.pathname === '/visa/register' ? style.active : ""}>
+            <Link to="/visa/register">
+              <img src={process.env.PUBLIC_URL + "/images/icon_plus.svg"} className={style.icon_plus} alt="등록"/>
             </Link>
           </li>
           <li className={location.pathname === '/' ? style.active : ""}>

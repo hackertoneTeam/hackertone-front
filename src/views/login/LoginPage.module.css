@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  height: calc(100vh - 16.41vw);
   background-color: var(--bg-color);
 }
 .loginMain h1 {

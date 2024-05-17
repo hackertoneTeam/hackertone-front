@@ -9,9 +9,12 @@
 }
 .footer ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 8vh;
+}
+.footer li {
+  margin: 0 5.33vw;
 }
 .footer li a{
   display: flex;
@@ -21,11 +24,16 @@
   padding: 1vh 6vw;
   border-radius: 4vw;
 }
-.footer li.active a {
+.footer li.active:not(:nth-child(2)) a {
   background-color: var(--sub-color);
 }
 .footer img {
   height: 2.5vh;
+}
+.footer .icon_plus {
+  padding: 2.67vw;
+  background-color: var(--sub-color);
+  border-radius: 13.33vw;
 }
 .footer p {
   display: block;
