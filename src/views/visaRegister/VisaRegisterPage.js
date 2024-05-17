@@ -2,15 +2,18 @@ import {visaRegisterApi} from "../../apis/visa";
 import {useForm} from "react-hook-form";
 import FooterLayout from "../../commons/layouts/FooterLayout";
 import style from './VisaRegisterPage.module.css'
+import {useNavigate} from "react-router-dom";
 const VisaRegisterPage = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm()
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     visaRegister(data);
+    navigate('/main')
   }
   const visaRegister = (data) => {
     let formattedData = {
