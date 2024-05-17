@@ -1,6 +1,8 @@
 .footer {
+  padding: 0 5vw;
+  box-sizing: border-box;
   width: 100%;
-  min-height: 23.47vw;
+  height: 8vh;
   background-color: var(--main-color);
   position: fixed;
   bottom: 0;
@@ -9,27 +11,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.13vw 1.33vw 5.6vw 1.33vw;
+  height: 8vh;
 }
 .footer li a{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 1.6vw 6.93vw;
-  border-radius: 4.27vw;
+  padding: 1vw 6vw;
+  border-radius: 4vw;
 }
 .footer li.active a {
   background-color: var(--sub-color);
 }
 .footer img {
-  width: 8.27vw;
-  height: 7.73vw;
+  height: 3vh;
 }
 .footer p {
   display: block;
   margin-top: 1.6vw;
-  font-size: 3.2vw;
+  font-size: 1.4vh;
   font-weight: bold;
   color: white;
   text-align: center;
