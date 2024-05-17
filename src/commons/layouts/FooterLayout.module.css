@@ -1,1 +1,32 @@
-.footer {}
+.footer {
+  background-color: var(--main-color);
+}
+.footer ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 5px 21px 5px;
+}
+.footer li a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 6px 26px;
+  border-radius: 16px;
+}
+.footer li.active a {
+  background-color: var(--sub-color);
+}
+.footer img {
+  width: 31px;
+  height: 29px;
+}
+.footer p {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
