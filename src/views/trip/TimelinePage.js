@@ -2,14 +2,29 @@ import FooterLayout from '../../commons/layouts/FooterLayout';
 import style from './TimelinePage.module.css';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import { Link } from 'react-router-dom';
+
+const share = () => {
+
+};
 
 const TimelinePage = () => {
   return (
+    <>
     <div className={style.container}>
       <div className={style.header}>
-        <img src={process.env.PUBLIC_URL + "/images/icon_pen.svg"} alt="pen" />
-        <span>후쿠오카 여행</span>
-        <img className={style.correction} src={process.env.PUBLIC_URL + "/images/icon_share.svg"} alt="share" />
+        <div className={style.backContainer}>
+          <img src={process.env.PUBLIC_URL + "/images/icon_back.svg"} alt="<" className={style.backIcon} />
+          <Link to="/" className={`${style.pretendard} ${style.back}`}>여권</Link>
+        </div>
+        <h1>후쿠오카 여행</h1>
+        <div>
+          <img src={process.env.PUBLIC_URL + "/images/icon_pen.svg"} alt="pen" />
+          <img className={style.correction} src={process.env.PUBLIC_URL + "/images/icon_share.svg"} alt="share" />
+        </div>
+      </div>
+      <div className={style.dayHeader}>
+
       </div>
       <div className={style.wave} style={{backgroundImage: `url(${process.env.PUBLIC_URL + "/images/wave.svg"})`}} />
         <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false} className={style.mapContainer}>
@@ -19,6 +34,8 @@ const TimelinePage = () => {
           />
         </MapContainer>
     </div>
+    <FooterLayout />
+    </>
   )
 }
 
