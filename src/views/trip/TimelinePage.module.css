@@ -36,7 +36,7 @@
 
 .wave {
   background-repeat: repeat-x;
-  width: 6000px;
+  width: 100vw;
   height: 20px;
   position: absolute;
   top: 18vh;
@@ -45,21 +45,6 @@
   animation-duration: 30s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  z-index: 1;
-}
-
-.waveBottom {
-  background-repeat: repeat-x;
-  width: 6000px;
-  height: 20px;
-  position: absolute;
-  bottom: 8vh;
-  left: 0;
-  animation-name: wave;
-  animation-duration: 30s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-direction: reverse;
   z-index: 1;
 }
 
@@ -74,10 +59,10 @@
 
 @keyframes wave {
   0% {
-    left: 0;
+    background-position-x: 0;
   }
   100% {
-    left: -1200px;
+    background-position-x: -1200px;
   }
 }
 
@@ -95,7 +80,7 @@
 }
 
 .backIcon {
-  height: 1.8vh !important;
+  height: 2vh !important;
   margin-right: 0.5em;
 }
 
@@ -103,4 +88,45 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.waveBottom {
+  background-repeat: repeat-x;
+  width: 100vw;
+  height: 20px;
+  animation-name: wave;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 1;
+}
+
+.timelineContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100vw;
+  position: fixed;
+  bottom: 8vh;
+  min-height: 4vh;
+  padding-top: 1vh;
+  box-sizing: border-box;
+}
+
+.up {
+  width: 7vw;
+}
+
+.upContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 4vh;
+  background-color: #F6F4EF;
+}
+
+.draggable {
+  cursor: grab;
 }
