@@ -6,7 +6,6 @@ const VisaRegisterPage = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm()
 

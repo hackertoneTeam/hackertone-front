@@ -1,0 +1,93 @@
+.mainModal.show {
+  display: block;
+}
+.mainModal.noShow {
+  display: none;
+}
+.mainModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 85.33vw;
+  height: 56.53vw;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+}
+.mainModal .backgroundImage {
+  width: 85.33vw;
+  height: 56.53vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+.mainModal .visaIcon {
+  position: absolute;
+  top: -55px;
+  left: -20px;
+  z-index: 3;
+}
+.mainModal .textWrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  position: absolute;
+  right: 8vw;
+  top: 6.67vw;
+  z-index: 7;
+}
+.mainModal .tripDate {
+  font-size: 3.73vw;
+  color: var(--text-color);
+}
+.mainModal .tripName {
+  margin-top: 2.67vw;
+  font-size: 5.87vw;
+  font-weight: bold;
+  color: var(--text-color);
+}
+.mainModal .modalButton {
+  position: absolute;
+  bottom: -4vw;
+  left: 50%;
+  background-color: var(--main-color);
+  border-radius: 8vw;
+  border: 0;
+  padding: 2.67vw 12.53vw;
+  transform: translateX(-50%);
+  font-size: 4.8vw;
+  font-family: yg-jalnan, Serif;
+  color: white;
+  z-index: 6;
+}
+.mainModal .modalImage1 {
+  position: absolute;
+  left: 17px;
+  bottom: 53px;
+  z-index: 2;
+}
+.mainModal .modalImage2 {
+  position: absolute;
+  left: 128px;
+  bottom: 83px;
+  z-index: 4;
+}
+.mainModal .modalImage3 {
+  position: absolute;
+  right: 14px;
+  bottom: 36px;
+  z-index: 5;
+}
+.blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4vw);
+  z-index: 50;
+}

@@ -5,7 +5,6 @@ import axios from "axios";
 import {kakaoLoginApi} from "../../apis/login";
 import {isLoggedInState} from "../../states/LoginState";
 
-let mountCount = 1
 const RedirectPage = () => {
   const code = new URL(window.location.href).searchParams.get("code");
   const [didMount, setDidMount] = useState(false);
@@ -13,7 +12,6 @@ const RedirectPage = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    mountCount++
     setDidMount(true)
   }, [])
 

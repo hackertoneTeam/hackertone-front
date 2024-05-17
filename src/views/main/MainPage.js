@@ -2,9 +2,12 @@ import FooterLayout from "../../commons/layouts/FooterLayout";
 import style from './MainPage.module.css'
 import {visaGetApi} from "../../apis/visa";
 import {useEffect, useState} from "react";
+import MainModal from "./MainModal";
 
 const MainPage = () => {
   const [visaList, setVisaList] = useState([]);
+  const [clickIndex, setClickIndex] = useState(0);
+  const [modalShow,setModalShow] = useState(false);
 
   useEffect(() => {
     getList();
@@ -29,9 +32,12 @@ const MainPage = () => {
         </div>
         <div className={style.visaList}>
           <ul>
-            {visaList.map((item) => { return(
+            {visaList.map((item,idx) => { return(
               <>
-                <li>
+                <li onClick={() => {
+                  setClickIndex(idx)
+                  setModalShow(true)
+                }}>
                   <div className={style.imgWrap}>
                     <img src={process.env.PUBLIC_URL + "/images/icon_visa.svg"} alt="여행증"/>
                   </div>
@@ -44,6 +50,7 @@ const MainPage = () => {
             )})}
           </ul>
         </div>
+        <MainModal show={modalShow} date={visaList[clickIndex]?.trip_to} name={visaList[clickIndex]?.trip_name}/>
       </main>
       <FooterLayout/>
     </>

@@ -7,7 +7,7 @@ import TimelinePage from "../views/trip/TimelinePage";
 const Routers = () => (
   <BrowserRouter>
     <Routes>
-      {/* 메인 */}
+      {/* 메인 (visa page) */}
       <Route path="/" element={<MainPage />}></Route>
       {/* 로그인 */}
       <Route path="/login" element={<LoginPage/>}></Route>
