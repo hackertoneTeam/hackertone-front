@@ -15,3 +15,10 @@ export const uploadImage = (data) => {
     data: data,
   })
 }
+
+export const getTripData = (id) => {
+  return Send({
+    method: 'get',
+    url: `/trip/${id}`,
+  })
+}
