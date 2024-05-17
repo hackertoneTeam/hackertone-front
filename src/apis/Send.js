@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {JWT_TOKEN} from "../utils/Utils";
 
-axios.defaults.headers.common['Authorization'] = JWT_TOKEN ? `Bearer ${JWT_TOKEN}` : ''
+axios.defaults.headers.common['Authorization'] = JWT_TOKEN ? `${JWT_TOKEN}` : ''
 
 const instance = axios.create({
   baseURL: process.env.REACT_APP_API_BASE_URL,

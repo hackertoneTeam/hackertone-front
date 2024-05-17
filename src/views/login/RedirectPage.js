@@ -25,7 +25,7 @@ const RedirectPage = () => {
     }
     kakaoLoginApi(data).then((r) => {
       console.log(r);
-      localStorage.setItem("token", localToken);
+      localStorage.setItem("token", r.data.access_token);
       setIsLoggedIn(true);
       navigate('/');
     }).catch((r) => {
