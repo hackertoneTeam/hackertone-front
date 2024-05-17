@@ -1,5 +1,9 @@
 .footer {
+  width: 100%;
+  min-height: 88px;
   background-color: var(--main-color);
+  position: fixed;
+  bottom: 0;
 }
 .footer ul {
   display: flex;
